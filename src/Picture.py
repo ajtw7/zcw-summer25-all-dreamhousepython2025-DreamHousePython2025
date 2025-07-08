@@ -16,7 +16,7 @@ class Picture:
         main_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
 
         # Create canvas for drawing
-        self.canvas = tk.Canvas(main_frame, width=600, height=400, bg='lightblue')
+        self.canvas = tk.Canvas(main_frame, width=800, height=800, bg='lightblue')
         self.canvas.pack(side=tk.LEFT, padx=(0, 10))
 
         self.wall = None
@@ -28,8 +28,23 @@ class Picture:
 
     def draw(self):
         self.wall = Square(canvas=self.canvas, size=100, color="red", fill="red", line=2)
-        self.wall.move_horizontal(50)
-        self.wall.move_vertical(80)
+        self.wall.move_horizontal(260)
+        self.wall.move_vertical(420)
+        self.wall.make_visible()
+        
+        self.wall = Square(canvas=self.canvas, size=100, color="red", fill="red", line=2)
+        self.wall.move_horizontal(370)
+        self.wall.move_vertical(420)
+        self.wall.make_visible()
+
+        self.wall = Square(canvas=self.canvas, size=100, color="red", fill="red", line=2)
+        self.wall.move_horizontal(150)
+        self.wall.move_vertical(420)
+        self.wall.make_visible()
+
+        self.wall = Square(canvas=self.canvas, size=100, color="red", fill="red", line=2)
+        self.wall.move_horizontal(480)
+        self.wall.move_vertical(420)
         self.wall.make_visible()
 
         self.window = Square(canvas=self.canvas, size=30, color="black", fill="black", line=1)
@@ -42,7 +57,7 @@ class Picture:
         self.roof.move_vertical(113)
         self.roof.make_visible()
 
-        self.sun = Circle(canvas=self.canvas, diameter=60, color="yellow", fill="yellow", line=1)
+        self.sun = Circle(canvas=self.canvas, diameter=60, color="yellow", fill="orange", line=1)
         self.sun.move_horizontal(200)
         self.sun.move_vertical(-10)
         self.sun.make_visible()
